@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYKTRA AI</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:#050505;
+  color:white;
+  font-family:Arial,sans-serif;
+  height:100vh;
+}
+
+header{
+  padding:25px;
+  text-align:center;
+  border-bottom:1px solid #222;
+}
+
+.logo{
+  font-size:32px;
+  letter-spacing:8px;
+  font-weight:bold;
+}
+
+.status{
+  color:#00ff88;
+  font-size:12px;
+  margin-top:8px;
+}
+
+main{
+  padding:20px;
+  max-width:700px;
+  margin:auto;
+}
+
+.centro{
+  text-align:center;
+  margin:40px 0;
+}
+
+.nucleo{
+  width:130px;
+  height:130px;
+  margin:auto;
+  border:2px solid #00ff88;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 35px #00ff88;
+}
+
+.nucleo span{
+  font-size:35px;
+}
+
+h2{
+  margin-top:25px;
+}
+
+.chat{
+  background:#0d0d0d;
+  border:1px solid #222;
+  border-radius:15px;
+  padding:15px;
+  min-height:180px;
+}
+
+.mensagem{
+  background:#171717;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+
+.input{
+  display:flex;
+  gap:8px;
+  margin-top:15px;
+}
+
+input{
+  flex:1;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #333;
+  background:#111;
+  color:white;
+}
+
+button{
+  padding:14px;
+  border:0;
+  border-radius:10px;
+  background:#00ff88;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">CYKTRA</div>
+  <div class="status">● SISTEMA ONLINE</div>
+</header>
+
+<main>
+
+<div class="centro">
+
+  <div class="nucleo">
+    <span>◉</span>
+  </div>
+
+  <h2>CYKTRA CORE</h2>
+  <p>Assistente de Inteligência Artificial</p>
+
+</div>
+
+<div class="chat" id="chat">
+
+  <div class="mensagem">
+    <b>CYKTRA:</b><br>
+    Sistema inicializado. Como posso ajudar?
+  </div>
+
+</div>
+
+<div class="input">
+
+  <input id="texto" placeholder="Fale com a CYKTRA...">
+
+  <button onclick="enviar()">Enviar</button>
+
+</div>
+
+</main>
+
+<script>
+
+function enviar(){
+
+  let input=document.getElementById("texto");
+  let chat=document.getElementById("chat");
+
+  if(input.value=="") return;
+
+  chat.innerHTML +=
+  "<div class='mensagem'><b>VOCÊ:</b><br>"+
+  input.value+"</div>";
+
+  chat.innerHTML +=
+  "<div class='mensagem'><b>CYKTRA:</b><br>"+
+  "Mensagem recebida. Meu cérebro de IA será conectado na próxima etapa.</div>";
+
+  input.value="";
+
+}
+
+</script>
+
+</body>
+  </html>
